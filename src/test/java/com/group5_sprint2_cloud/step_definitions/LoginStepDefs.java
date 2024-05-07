@@ -26,6 +26,8 @@ public class LoginStepDefs {
             password = ConfigurationReader.getProperty("employee_password");
         }
 
+        new LoginPage().login(username,password);
+
     }
 
 

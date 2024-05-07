@@ -29,7 +29,6 @@ public class LoginPage {
         submit.click();
         // verification that we logged
         String actualUrl = "https://qa.symund.com/index.php/apps/dashboard/";
-        BrowserUtils.sleep(3);
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(),actualUrl);
     }
 
