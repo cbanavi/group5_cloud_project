@@ -7,8 +7,8 @@ Feature: Users should be able to login
 
   Scenario Outline: Verify login with different user types
     Given the user logged in as "<userType>"
-    Given the user logged in with username as "User1 --- 300" and password as "Userpass123"
-    And the user logged in with username as "Employee1 --- 300" and password as "Employee123"
+    Given the user logged in with username as "User5" and password as "Userpass123"
+    And the user logged in with username as "Employee5" and password as "Employee123"
     Examples:
       | userType |
       | users    |
