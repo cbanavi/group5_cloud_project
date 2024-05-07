@@ -3,12 +3,10 @@ Feature: Folder View Order and File Selection.
   As a user, I should be able to change folder view order by using Name/Size/Modified buttons
   Folder and files will be noted as Options in the steps.
 
-  Background:
-    Given User is logged In
-    Then User is on the Files page
-
 
   Scenario: User changes folder view order by Name
+    Given User is logged In
+    Then User is on the Files page
     When User changes the folder view order by Name
     Then User verifies options are displayed in alphabetical order
 

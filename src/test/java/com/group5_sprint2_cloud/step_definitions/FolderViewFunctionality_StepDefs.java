@@ -2,6 +2,7 @@ package com.group5_sprint2_cloud.step_definitions;
 
 import com.group5_sprint2_cloud.pages.FolderViewFunctionality_Page;
 import com.group5_sprint2_cloud.pages.LoginPage;
+import com.group5_sprint2_cloud.utilities.BrowserUtils;
 import com.group5_sprint2_cloud.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -11,13 +12,15 @@ import org.junit.Assert;
 import java.net.URL;
 
 public class FolderViewFunctionality_StepDefs {
+
     FolderViewFunctionality_Page folderViewFunctionalityPage = new FolderViewFunctionality_Page();
     LoginStepDefs loginStepDefs = new LoginStepDefs();
 
 
     @Given("User is logged In")
     public void userIsLoggedIn() {
-        loginStepDefs.the_user_logged_in_as("user");
+        loginStepDefs.the_user_logged_in_with_username_as_and_password_as("User5", "Userpass123");
+        BrowserUtils.sleep(5);
     }
 
     @Then("User is on the Files page")
