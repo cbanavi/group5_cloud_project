@@ -66,7 +66,6 @@ public abstract class BasePage {
 
     }
 
-
     /**
      * This method will click any module you put. Just extend into your StepDef class
      * In your gerkin step, call navigateToModule() and put whichever module you'd like to click
