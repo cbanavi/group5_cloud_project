@@ -1,8 +1,5 @@
 package com.group5_sprint2_cloud.pages;
 
-
-
-
 import com.group5_sprint2_cloud.utilities.BrowserUtils;
 import com.group5_sprint2_cloud.utilities.Driver;
 import org.openqa.selenium.By;
