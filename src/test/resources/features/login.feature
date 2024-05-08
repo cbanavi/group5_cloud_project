@@ -1,9 +1,8 @@
 @wip
-Feature: *Put Your Own User Story Here*
+Feature:
 
-  Scenario Outline: *Put Your Own Acceptance Criteria Here*
+  Scenario Outline:
     Given the user logged in as "<userType>"
-    #Copy and paste into your feature file and add your gerkin steps between Given and Examples:
     Examples:
       | userType |
       | user     |
