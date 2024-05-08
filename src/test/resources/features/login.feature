@@ -1,22 +1,10 @@
 @wip
-Feature: Users should be able to login
+Feature: *Put Your Own User Story Here*
 
- # Background: User is already in the log in page
-  #  Given the user is on the login page
-
-
-  Scenario Outline: Verify login with different user types
+  Scenario Outline: *Put Your Own Acceptance Criteria Here*
     Given the user logged in as "<userType>"
-    #Given the user logged in with username as "User1" and password as "Userpass123"
-    #And the user logged in with username as "Employee" and password as "Employee123"
+    #Copy and paste into your feature file and add your gerkin steps between Given and Examples:
     Examples:
       | userType |
       | user     |
       | employee |
-
-
-
-
-
-
-
