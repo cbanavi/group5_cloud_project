@@ -1,4 +1,4 @@
 /target/
 /.idea/
 /*.iml
-/CukesRunner
+src/test/java/com/group5_sprint2_cloud/runners/CukesRunner.java
