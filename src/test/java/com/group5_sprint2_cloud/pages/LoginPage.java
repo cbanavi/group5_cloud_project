@@ -12,13 +12,15 @@ public class LoginPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(id="user")
+    @FindBy(id="prependedInput")
     public WebElement userName;
 
-    @FindBy(id="password")
+
+
+    @FindBy(id="prependedInput2")
     public WebElement password;
 
-    @FindBy(id = "submit-form")
+    @FindBy(name = "_submit")
     public WebElement submit;
 
 
