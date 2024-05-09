@@ -19,16 +19,7 @@ public class LoginPage {
 
     @FindBy(id ="submit-form")
     public WebElement submit;
-
-
-    public void login(String username, String password) {
-        userName.sendKeys(username);
-        passwordInput.sendKeys(password);
-        submit.click();
-        // verification that we logged
-        String actualUrl = "https://qa.symund.com/index.php/apps/dashboard/";
-        Assert.assertEquals(Driver.getDriver().getCurrentUrl(),actualUrl);
-    }
+    
 
     public void loginNoProperties(String username, String password) {
         userName.sendKeys(username);

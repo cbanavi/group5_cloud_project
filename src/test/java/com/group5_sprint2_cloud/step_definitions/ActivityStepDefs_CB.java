@@ -16,14 +16,14 @@ public class ActivityStepDefs_CB extends BasePage {
 
     @When("User clicks Activity module")
     public void user_clicks_activity_module() {
-        navigateToModule("Activity");
+        navigateToModule("Calendar");
+
     }
 
     @Then("User should see all listed activities under Activity module")
     public void userShouldSeeAllListedActivitiesUnderActivityModule(List<String> expectedActivities) {
 
         BrowserUtils.waitForTitleContains("Activity - Symund - QA");
-
 
 
     }
