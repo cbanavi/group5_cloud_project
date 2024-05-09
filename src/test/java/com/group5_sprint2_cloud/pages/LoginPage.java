@@ -1,7 +1,5 @@
 package com.group5_sprint2_cloud.pages;
 
-
-import com.group5_sprint2_cloud.utilities.BrowserUtils;
 import com.group5_sprint2_cloud.utilities.Driver;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
