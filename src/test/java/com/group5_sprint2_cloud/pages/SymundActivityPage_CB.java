@@ -14,34 +14,13 @@ public class SymundActivityPage_CB {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//a[@data-navigation='self']")
-    public List<WebElement> byYouActivity;
+    @FindBy(xpath = "//div[@id='app-navigation']//li")
+    public List<WebElement> allActivities;
 
-    @FindBy(xpath = "//a[@data-navigation='by']")
-    public List<WebElement> byOthersActivity;
+    @FindBy(xpath = "//span[@class='activitytime has-tooltip live-relative-timestamp']")
+    public List<WebElement> descendingActivities;
 
-    @FindBy(xpath = "//a[@data-navigation='circles']")
-    public List<WebElement> circlesActivity;
-
-    @FindBy(xpath = "//a[@data-navigation='files_favorites']")
-    public List<WebElement> favoritesActivity;
-
-    @FindBy(xpath = "//a[@data-navigation='files']")
-    public List<WebElement> fileChangesActivity;
-
-    @FindBy(xpath = "//a[@data-navigation='files_sharing']")
-    public List<WebElement> fileSharesActivity;
-
-    @FindBy(xpath = "//a[@data-navigation='calendar']")
-    public List<WebElement> calendarActivity;
-
-    @FindBy(xpath = "//a[@data-navigation='calendar_todo']")
-    public List<WebElement> todosActivity;
-
-    @FindBy(xpath = "//a[@data-navigation='comments']")
-    public List<WebElement> commentsActivity;
-
-    @FindBy(xpath = "//a[@data-navigation='deck']")
-    public List<WebElement> deckActivity;
+    @FindBy(xpath = "//div[@id='no_more_activities']")
+    public WebElement messageAtBottomOfPage;
 
 }

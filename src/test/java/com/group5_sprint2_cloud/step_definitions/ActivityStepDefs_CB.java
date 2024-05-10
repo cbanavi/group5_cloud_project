@@ -5,9 +5,12 @@ import com.group5_sprint2_cloud.pages.SymundActivityPage_CB;
 import com.group5_sprint2_cloud.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class ActivityStepDefs_CB extends BasePage {
@@ -24,15 +27,42 @@ public class ActivityStepDefs_CB extends BasePage {
 
         BrowserUtils.waitForTitleContains("Activity - Symund - QA");
 
+        List<String> actualActivities = new ArrayList<>();
 
+        for (WebElement eachActivityDropdown : symundActivityPageCb.allActivities) {
+            if (!eachActivityDropdown.getText().equals("All activities")) {
+                actualActivities.add(eachActivityDropdown.getText());
+            }
+        }
+
+        Assert.assertEquals(expectedActivities, actualActivities);
 
     }
 
     @Then("User should see all items list ordered by newest to oldest")
     public void userShouldSeeAllItemsListOrderedByNewestToOldest() {
+        BrowserUtils.waitForVisibility(symundActivityPageCb.messageAtBottomOfPage, 5);
+
+        List<String> actualActivityTimes = new ArrayList<>();
+
+        for (WebElement eachActivity : symundActivityPageCb.descendingActivities) {
+            actualActivityTimes.add(eachActivity.getAttribute("data-original-title"));
+        }
+
+        List<String> expectedActivityTimes = new ArrayList<>(actualActivityTimes);
+
+        expectedActivityTimes.sort(Collections.reverseOrder());
+
+        Assert.assertEquals(expectedActivityTimes, actualActivityTimes);
+
+
     }
 
     @Then("User should see {string} at the bottom of page")
-    public void userShouldSeeAtTheBottomOfPage(String arg0) {
+    public void userShouldSeeAtTheBottomOfPage(String expectedMessage) {
+        BrowserUtils.waitForVisibility(symundActivityPageCb.messageAtBottomOfPage, 5);
+
+        Assert.assertEquals(expectedMessage, symundActivityPageCb.messageAtBottomOfPage.getText());
+
     }
 }
