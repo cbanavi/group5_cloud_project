@@ -13,7 +13,7 @@ Feature: As a user, I should be able to see listed items under the Activity modu
       | Favorites    |
       | File changes |
       | File shares  |
-      | Calendars    |
+      | Calendar    |
       | Todos        |
       | Comments     |
       | Deck         |
