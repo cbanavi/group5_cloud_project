@@ -20,7 +20,10 @@ public class LoginStepDefs {
 //        }
 //        new LoginPage().login(username,password);
 
-
+/**
+ * The if statement below will determine if you're using User username or Employee username
+ * Then it will go to the userLoginWithEnv() method in the LoginPage
+ */
         if(userType.equalsIgnoreCase("User")){
             new LoginPage().userLoginWithEnv();
         }else if(userType.equalsIgnoreCase("Employee")){
