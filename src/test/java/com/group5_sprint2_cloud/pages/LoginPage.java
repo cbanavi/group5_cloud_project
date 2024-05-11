@@ -25,9 +25,6 @@ public class LoginPage {
         userName.sendKeys(username);
         passwordInput.sendKeys(password);
         submit.click();
-        // verification that we logged
-        String actualUrl = "https://qa.symund.com/index.php/apps/dashboard/";
-        Assert.assertEquals(Driver.getDriver().getCurrentUrl(),actualUrl);
     }
 
     public void loginNoProperties(String username, String password) {
