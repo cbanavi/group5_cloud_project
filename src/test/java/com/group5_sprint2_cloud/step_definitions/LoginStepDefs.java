@@ -2,6 +2,7 @@ package com.group5_sprint2_cloud.step_definitions;
 
 import com.group5_sprint2_cloud.pages.LoginPage;
 import com.group5_sprint2_cloud.utilities.ConfigurationReader;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 public class LoginStepDefs {
 
@@ -14,20 +15,16 @@ public class LoginStepDefs {
     @Given("the user logged in as {string}")
     public void the_user_logged_in_as(String userType) {
         //based on input enter that user information
-        String username =null;
-        String password =null;
+        String username = null;
+        String password = null;
 
-        if(userType.equalsIgnoreCase("driver")){
-            username = ConfigurationReader.getProperty("driver_username");
-            password = ConfigurationReader.getProperty("driver_password");
-        }else if(userType.equalsIgnoreCase("sales manager")){
-            username = ConfigurationReader.getProperty("sales_manager_username");
-            password = ConfigurationReader.getProperty("sales_manager_password");
-        }else if(userType.equalsIgnoreCase("store manager")){
-            username = ConfigurationReader.getProperty("store_manager_username");
-            password = ConfigurationReader.getProperty("store_manager_password");
+        if(userType.equalsIgnoreCase("User")){
+            username = ConfigurationReader.getProperty("usernameVC");
+            password = ConfigurationReader.getProperty("password");
+        }else if(userType.equalsIgnoreCase("Employee")){
+            username = ConfigurationReader.getProperty("employeeVC");
+            password = ConfigurationReader.getProperty("employee_password");
         }
-        //send username and password and login
         new LoginPage().login(username,password);
     }
 
@@ -36,8 +33,6 @@ public class LoginStepDefs {
       LoginPage loginPage=new LoginPage();
       loginPage.login(username,password);
     }
-
-
 
 
 
