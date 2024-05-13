@@ -8,6 +8,10 @@ public class LoginStepDefs {
     @Given("the user logged in as {string}")
     public void the_user_logged_in_as(String userType) {
 
+        /**
+         * This is for general login
+         *
+
 //            String username = null;
 //            String password = null;
 //
@@ -19,25 +23,15 @@ public class LoginStepDefs {
 //            password = ConfigurationReader.getProperty("employee_password");
 //        }
 //        new LoginPage().login(username,password);
+         */
 
-/**
- * The if statement below will determine if you're using User username or Employee username
- * Then it will go to the userLoginWithEnv() method in the LoginPage
- */
+        //This is for System login
         if(userType.equalsIgnoreCase("User")){
             new LoginPage().userLoginWithEnv();
         }else if(userType.equalsIgnoreCase("Employee")){
             new LoginPage().employeeLoginWithEnv();
         }
 
-
-
     }
 
 }
-
-
-
-
-
-
