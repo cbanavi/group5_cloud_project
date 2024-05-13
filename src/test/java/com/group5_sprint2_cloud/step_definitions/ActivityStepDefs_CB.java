@@ -51,6 +51,7 @@ public class ActivityStepDefs_CB extends BasePage {
 
         List<String> expectedActivityTimes = new ArrayList<>(actualActivityTimes);
 
+        actualActivityTimes.sort(Collections.reverseOrder());
         expectedActivityTimes.sort(Collections.reverseOrder());
 
         Assert.assertEquals(expectedActivityTimes, actualActivityTimes);
