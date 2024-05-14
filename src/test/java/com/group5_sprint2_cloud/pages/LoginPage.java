@@ -53,5 +53,4 @@ public class LoginPage {
         loginNoProperties(usernameEnv, passwordEnv);
 
     }
-
 }
