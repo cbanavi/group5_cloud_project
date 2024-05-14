@@ -53,4 +53,5 @@ public class NotesModuleFunctionality_Page_JN extends BasePage {
     public WebElement detailsVerification;
 
 
+
 }

@@ -1,6 +1,7 @@
 package com.group5_sprint2_cloud.pages;
 
 
+import com.group5_sprint2_cloud.utilities.ConfigurationReader;
 import com.group5_sprint2_cloud.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,23 +13,49 @@ public class LoginPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(id="prependedInput")
+    @FindBy(id="user")
     public WebElement userName;
 
+    @FindBy(id="password")
+    public WebElement passwordInput;
 
-
-    @FindBy(id="prependedInput2")
-    public WebElement password;
-
-    @FindBy(name = "_submit")
+    @FindBy(id = "submit-form")
     public WebElement submit;
 
 
-    public void login(String userNameStr, String passwordStr) {
-        userName.sendKeys(userNameStr);
-        password.sendKeys(passwordStr);
+    public void loginNoProperties(String username, String password) {
+        userName.sendKeys(username);
+        passwordInput.sendKeys(password);
         submit.click();
-        // verification that we logged
+    }
+
+    public void userLoginWithEnv(){
+        String usernameEnv = System.getenv("USER_USERNAME");
+        String passwordEnv = System.getenv("USER_PASSWORD");
+
+        loginNoProperties(usernameEnv, passwordEnv);
+
+    }
+
+    public void employeeLoginWithEnv(){
+        String usernameEnv = System.getenv("EMPLOYEE_USERNAME");
+        String passwordEnv = System.getenv("EMPLOYEE_PASSWORD");
+
+        loginNoProperties(usernameEnv, passwordEnv);
+
     }
 
 }
+
+//    public void login(String username, String password) {
+//        usernameInput.sendKeys(ConfigurationReader.getProperty(username));
+//        passwordInput.sendKeys(ConfigurationReader.getProperty(password));
+//        submit.click();
+//    }
+
+//    public void login(String userType) { // userType = sales manager
+//        userType = userType.replace(" ", "_");
+//        String username = userType + "username";
+//        String password = userType + "password";
+//        login(username, password);
+//    }

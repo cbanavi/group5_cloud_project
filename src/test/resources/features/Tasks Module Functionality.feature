@@ -1,6 +1,6 @@
 @B33G5-138
-Feature: Task Management
-	User Story :
+Feature: Tasks Module Functionality
+	User Story:
 	As a user, I should be able to create a new task list or a single
 	task and add any task to completed and important tasks list.
 

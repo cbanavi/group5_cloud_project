@@ -1,5 +1,8 @@
 @B33G5-129
-Feature: As a user, I should be able to create/delete any note and see the details of the note.
+Feature: Notes Module Functionality
+	User Story:
+	As a user, I should be able to create/delete any note and
+	see the details of the note.
 
 	
 	@B33G5-125

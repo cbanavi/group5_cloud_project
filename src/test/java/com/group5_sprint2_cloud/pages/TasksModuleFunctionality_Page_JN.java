@@ -83,4 +83,5 @@ public class TasksModuleFunctionality_Page_JN {
 
     @FindBy(xpath = "//li[@collection-id='current']//div[@class='app-navigation-entry__counter']")
     public WebElement uncompletedTasksCount;
+
 }

@@ -77,6 +77,7 @@ public class FolderViewFunctionality_Page_JN {
     @FindBy(xpath = "//label[@for='select_all_files']")
     public WebElement selectAll;
 
+
     @FindBy(xpath = "(//table[@id='filestable']//tr//span)[2]")
     public WebElement columnVerificationTitle;
 
