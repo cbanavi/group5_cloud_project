@@ -81,6 +81,4 @@ public class FolderViewFunctionality_Page_JN {
     public WebElement columnVerificationTitle;
 
 
-
-
 }

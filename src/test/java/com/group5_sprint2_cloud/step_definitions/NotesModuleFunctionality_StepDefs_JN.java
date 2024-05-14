@@ -1,7 +1,6 @@
 package com.group5_sprint2_cloud.step_definitions;
 
 import com.group5_sprint2_cloud.pages.NotesModuleFunctionality_Page_JN;
-import com.group5_sprint2_cloud.pages.TestBase_jn;
 import com.group5_sprint2_cloud.utilities.BrowserUtils;
 import com.group5_sprint2_cloud.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -9,9 +8,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 
 
-public class NotesModuleFunctionality_StepDefs_JN extends TestBase_jn {
+public class NotesModuleFunctionality_StepDefs_JN {
+    Actions actions = new Actions(Driver.getDriver());
     LoginStepDefs loginStepDefs = new LoginStepDefs();
     NotesModuleFunctionality_Page_JN notesPage = new NotesModuleFunctionality_Page_JN();
 

@@ -52,5 +52,4 @@ public class NotesModuleFunctionality_Page_JN extends BasePage {
     @FindBy(xpath = "//p[@class='app-sidebar-header__subtitle']")
     public WebElement detailsVerification;
 
-
 }

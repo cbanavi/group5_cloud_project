@@ -72,5 +72,4 @@ public class FolderViewFunctionality_StepDefs_JN  {
     Assert.assertTrue(folderViewFunctionalityPage.columnVerificationTitle.isDisplayed());
     }
 
-
 }

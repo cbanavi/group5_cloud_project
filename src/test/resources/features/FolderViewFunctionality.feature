@@ -1,5 +1,8 @@
 @B33G5-113
-Feature: Default
+Feature: Folder View Functionality
+  User Story:
+  As a user, I should be able to change
+  folder view order by using Name/Size/Modified buttons
 
 
   @B33G5-109

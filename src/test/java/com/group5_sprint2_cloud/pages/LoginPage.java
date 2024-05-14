@@ -30,5 +30,4 @@ public class LoginPage {
         submit.click();
         // verification that we logged
     }
-
 }

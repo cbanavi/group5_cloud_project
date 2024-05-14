@@ -4,8 +4,6 @@ import com.group5_sprint2_cloud.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class TasksModuleFunctionality_Page_JN {
@@ -54,9 +52,6 @@ public class TasksModuleFunctionality_Page_JN {
 
     @FindBy(xpath = "(//div[@class='task-checkbox'])[1]")
     public WebElement checkbox;
-
-    @FindBy(xpath = "//span[@class='heading__title icon-triangle-s']")
-    public WebElement completedBtn;
 
     @FindBy(xpath = "//li[@collection-id='completed']//span")
     public WebElement completedTab;
