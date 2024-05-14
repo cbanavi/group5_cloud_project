@@ -46,15 +46,17 @@ public class ActivityStepDefs_CB extends BasePage {
         List<String> actualActivityTimes = new ArrayList<>();
 
         for (WebElement eachActivity : symundActivityPageCb.descendingActivities) {
-            actualActivityTimes.add(eachActivity.getAttribute("data-original-title"));
+            actualActivityTimes.add(eachActivity.getAttribute("data-timestamp"));
         }
 
         List<String> expectedActivityTimes = new ArrayList<>(actualActivityTimes);
 
         actualActivityTimes.sort(Collections.reverseOrder());
-        expectedActivityTimes.sort(Collections.reverseOrder());
 
-        Assert.assertEquals(expectedActivityTimes, actualActivityTimes);
+        System.out.println("expectedActivityTimes = " + expectedActivityTimes);
+        System.out.println("actualActivityTimes = " + actualActivityTimes);
+
+        Assert.assertEquals(actualActivityTimes, expectedActivityTimes);
 
 
     }

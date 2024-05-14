@@ -17,7 +17,7 @@ public class SymundActivityPage_CB {
     @FindBy(xpath = "//div[@id='app-navigation']//li")
     public List<WebElement> allActivities;
 
-    @FindBy(xpath = "//span[@class='activitytime has-tooltip live-relative-timestamp']")
+    @FindBy(xpath = "//span[@data-timestamp]")
     public List<WebElement> descendingActivities;
 
     @FindBy(xpath = "//div[@id='no_more_activities']")
