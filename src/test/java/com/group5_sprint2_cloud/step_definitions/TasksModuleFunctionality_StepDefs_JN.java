@@ -1,15 +1,17 @@
 package com.group5_sprint2_cloud.step_definitions;
 import com.group5_sprint2_cloud.pages.TasksModuleFunctionality_Page_JN;
 import com.group5_sprint2_cloud.utilities.BrowserUtils;
+import com.group5_sprint2_cloud.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 
 
 public class TasksModuleFunctionality_StepDefs_JN  {
-
+    Actions actions = new Actions(Driver.getDriver());
     LoginStepDefs loginStepDefs = new LoginStepDefs();
     TasksModuleFunctionality_Page_JN tasksPage = new TasksModuleFunctionality_Page_JN();
 
@@ -38,12 +40,18 @@ public class TasksModuleFunctionality_StepDefs_JN  {
         tasksPage.trigger.click();
         tasksPage.deleteList.click();
         BrowserUtils.waitFor(8);
+
     }
 
 
-    @When("the user creates a new task")
-    public void the_user_creates_a_new_task() {
-        tasksPage.toDoTestBtn.click();
+    @When("user selects a list and creates a new task")
+    public void user_selects_a_list_and_creates_a_new_task() {
+        tasksPage.addList.click();
+        BrowserUtils.waitFor(3);
+        tasksPage.listInputBox.sendKeys("Test" + Keys.ENTER);
+        tasksPage.testBtn.click();
+        tasksPage.tasksInputBox.sendKeys("Performance Testing" + Keys.ENTER);
+        tasksPage.tasksInputBox.sendKeys("Performance Testing" + Keys.ENTER);
         tasksPage.tasksInputBox.sendKeys("Performance Testing" + Keys.ENTER);
 
     }
@@ -59,6 +67,7 @@ public class TasksModuleFunctionality_StepDefs_JN  {
 
     @Given("there are existing tasks in the task list")
     public void there_are_existing_tasks_in_the_task_list() {
+        tasksPage.testBtn.click();
         Assert.assertTrue(tasksPage.verifyVisibilityOfTasks());
     }
 
@@ -79,18 +88,22 @@ public class TasksModuleFunctionality_StepDefs_JN  {
 
     @When("the user clicks on the star icon next to a task")
     public void the_user_clicks_on_the_star_icon_next_to_a_task() {
-        tasksPage.allTab.click();
         BrowserUtils.waitFor(3);
         tasksPage.starBtn.click();
     }
 
     @Then("the task should be marked as important")
     public void the_task_should_be_marked_as_important() {
-        BrowserUtils.waitForVisibility(tasksPage.importantTab,5);
+        BrowserUtils.waitForVisibility(tasksPage.importantTab,1);
         tasksPage.importantTab.click();
         // Get the title of the task that should now be marked as important
         String importantTaskText = "Performance Testing";
         Assert.assertEquals(importantTaskText,tasksPage.starredElement.getText());
+        //actions.moveToElement(tasksPage.triggerForTestBtn).perform();
+        tasksPage.testBtn.click();
+        tasksPage.triggerForTestBtn.click();
+        tasksPage.deleteList.click();
+        BrowserUtils.waitFor(8);
     }
 
 
@@ -103,6 +116,7 @@ public class TasksModuleFunctionality_StepDefs_JN  {
     @Then("the user should see the number of uncompleted tasks next to the tab")
     public void the_number_of_uncompleted_tasks_next_to_the_current_tab() {
        Assert.assertTrue(tasksPage.uncompletedTasksCount.isDisplayed());
+
     }
 
 

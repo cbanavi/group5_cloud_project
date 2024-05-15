@@ -22,8 +22,7 @@ Feature: Tasks Module Functionality
   Scenario Outline: User creates a new task
     Given the user is logged in as "<userType>"
     And  user is on the Task Management Page
-    When user creates a new list of tasks
-    When the user creates a new task
+    When user selects a list and creates a new task
     Then the new task should be added to the task list
     Examples:
       | userType |
@@ -61,7 +60,6 @@ Feature: Tasks Module Functionality
   Scenario Outline: User views the number of uncompleted tasks
     Given the user is logged in as "<userType>"
     And  user is on the Task Management Page
-    And there are existing tasks in the task list
     When the user navigates to the Current tab
     Then the user should see the number of uncompleted tasks next to the tab
     Examples:

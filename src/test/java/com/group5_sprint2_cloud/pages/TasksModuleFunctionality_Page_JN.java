@@ -26,11 +26,14 @@ public class TasksModuleFunctionality_Page_JN {
     @FindBy(xpath = "(//ul//li/a[contains(.,'To Do')]/..//button)[3]")
     public WebElement trigger;
 
+    @FindBy(xpath = "(//ul//li/a[contains(.,'Test')]/..//button)[3]")
+    public WebElement triggerForTestBtn;
+
     @FindBy(xpath = "//button//span[.='Delete']")
     public WebElement deleteList;
 
-    @FindBy(xpath = "(//ul//li/a[contains(.,'To Do')]/span)")
-    public WebElement toDoTestBtn;
+    @FindBy(xpath = "(//ul//li/a[contains(.,'Test')]/span)")
+    public WebElement testBtn;
 
     @FindBy(id = "target")
     public WebElement tasksInputBox;
