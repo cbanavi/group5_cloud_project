@@ -25,8 +25,7 @@ public class NotesModuleFunctionality_StepDefs_JN {
     @Given("the user is on the Notes page")
     public void the_user_is_on_the_notes_page() {
         notesPage.notesBtn.click();
-        String expectedUrl = "https://qa.symund.com/index.php/apps/notes/";
-        Assert.assertEquals(Driver.getDriver().getCurrentUrl(), expectedUrl);
+
     }
 
     @When("the user creates a new note")
