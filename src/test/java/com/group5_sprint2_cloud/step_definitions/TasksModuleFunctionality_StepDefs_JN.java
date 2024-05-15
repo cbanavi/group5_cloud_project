@@ -99,7 +99,6 @@ public class TasksModuleFunctionality_StepDefs_JN  {
         // Get the title of the task that should now be marked as important
         String importantTaskText = "Performance Testing";
         Assert.assertEquals(importantTaskText,tasksPage.starredElement.getText());
-        //actions.moveToElement(tasksPage.triggerForTestBtn).perform();
         tasksPage.testBtn.click();
         tasksPage.triggerForTestBtn.click();
         tasksPage.deleteList.click();
