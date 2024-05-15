@@ -7,11 +7,10 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 
 
 public class TasksModuleFunctionality_StepDefs_JN  {
-    Actions actions = new Actions(Driver.getDriver());
+
     LoginStepDefs loginStepDefs = new LoginStepDefs();
     TasksModuleFunctionality_Page_JN tasksPage = new TasksModuleFunctionality_Page_JN();
 
@@ -37,9 +36,11 @@ public class TasksModuleFunctionality_StepDefs_JN  {
     public void the_new_list_should_be_visible_in_the_task_lists() {
         String expectedText = "To Do";
         Assert.assertEquals(expectedText, tasksPage.toDoList.getText());
+        tasksPage.toDoList.click();
         tasksPage.trigger.click();
+        BrowserUtils.waitFor(3);
         tasksPage.deleteList.click();
-        BrowserUtils.waitFor(8);
+        BrowserUtils.waitFor(10);
 
     }
 
@@ -102,7 +103,7 @@ public class TasksModuleFunctionality_StepDefs_JN  {
         tasksPage.testBtn.click();
         tasksPage.triggerForTestBtn.click();
         tasksPage.deleteList.click();
-        BrowserUtils.waitFor(8);
+        BrowserUtils.waitFor(10);
     }
 
 
