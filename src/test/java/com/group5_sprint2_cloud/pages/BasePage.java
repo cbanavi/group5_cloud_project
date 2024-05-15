@@ -83,6 +83,6 @@ public abstract class BasePage {
         } catch (Exception e) {
             BrowserUtils.clickWithTimeOut(Driver.getDriver().findElement(By.xpath(moduleLocator)),  5);
         }
-    }
+    }//
 
 }
