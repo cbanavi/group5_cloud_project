@@ -41,6 +41,7 @@ public class ActivityStepDefs_CB extends BasePage {
             }
         }
 
+
         Assert.assertEquals(expectedActivities, actualActivities);
 
     }
@@ -58,8 +59,6 @@ public class ActivityStepDefs_CB extends BasePage {
 
         actualActivityTimes.sort(Collections.reverseOrder());
 
-        System.out.println("expectedActivityTimes = " + expectedActivityTimes);
-        System.out.println("actualActivityTimes = " + actualActivityTimes);
 
         Assert.assertEquals(actualActivityTimes, expectedActivityTimes);
 
