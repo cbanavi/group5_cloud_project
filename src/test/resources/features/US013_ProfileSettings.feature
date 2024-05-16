@@ -2,11 +2,11 @@
 Feature: Edit/Enter Profile Settings Functionality
 
   @B33G5-186
-  Scenario Outline: Verify that User can see at least following titles inside “Personal Info” under Profile Settings page; => Full name/Email/Phone Number
+  Scenario Outline: Verify that User can see at least following titles inside “Personal Info” under Profile Settings page; => Full name/Email/Phone number
     Given the user logged in as "<userType>"
     When the user is on the Settings page
     And the user selects a language "en"
-    Then the user should see titles: "Full name", "Email", "Phone Number"
+    Then the user should see titles: "Full name", "Email", "Phone number"
     Examples:
       | userType |
       | user     |
@@ -28,7 +28,7 @@ Feature: Edit/Enter Profile Settings Functionality
   Scenario Outline: Verify that User cannot pass any characters except numbers into the "Phone Number" input box.
     Given the user logged in as "<userType>"
     When the user is on the Settings page
-    And the user enters "abc123" into the "Phone Number" input field
+    And the user enters "abc123" into the Phone Number input field
     Then the input should be rejected
     Examples:
       | userType |
