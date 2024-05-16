@@ -28,6 +28,7 @@ public class DeletedUtilsPS {
         BrowserUtils.verifyElementNotDisplayed(By.xpath("//span[@data-original-title='"+fileName+"']"));
     }
 
+
     public static void restoredfileVerificationForfilesPage(String fileName){
         BrowserUtils.verifyElementDisplayed(By.xpath("//*[@data-file='"+fileName+"']"));
     }

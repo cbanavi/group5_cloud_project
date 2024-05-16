@@ -15,7 +15,7 @@ public class TalkPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    //  @B33G5-149
+    //@B33G5-149
     @FindBy(xpath = "//li[@data-id='spreed']//*[@viewBox='0 0 20 20']")
 public WebElement talkButton;
 
@@ -60,7 +60,7 @@ public WebElement searchParticipantBar;
     }
 
 
-    //    @B33G5-150
+    //@B33G5-150
 
 @FindBy(xpath = "//button[@aria-label='Settings for conversation \"BravoG5\"']")
     public WebElement threeDotMenu;

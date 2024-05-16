@@ -14,6 +14,7 @@ public class TalkStepDefs {
 
     TalkPage talkPage = new TalkPage();
 
+
     @Given("user is on the Talk page")
     public void userIsOnTheTalkPage() {
 talkPage.talkButton.click();

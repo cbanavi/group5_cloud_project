@@ -27,6 +27,7 @@ DeletedPage deletedPage=new DeletedPage();
     }
 
 
+
     @When("user should be able  to select the Delete permanently")
     public void userShouldBeAbleToSelectTheDeletePermanently() {
         deletedPage.deleteFilesPermanently("test1");
@@ -36,6 +37,7 @@ DeletedPage deletedPage=new DeletedPage();
     public void thePermanentlyDeletedFileShouldBeRemovedFromTheTrashList() {
         DeletedUtilsPS.deletedfileVerificationForDeletedPage("test1");
     }
+
 
 
     @When("user should be able to select the Restore")

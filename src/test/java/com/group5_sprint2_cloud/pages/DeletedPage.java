@@ -44,9 +44,6 @@ public WebElement deletedFilesButton;
 
 //  @B33G5-142
 
-    @FindBy(xpath = "//tr[@data-path='test1']//a[@class='action action-menu permanent']")
-    public WebElement threeDotsButton;
-
     @FindBy(xpath = "//a[@data-action='Delete']")
     public WebElement deleteButton;
 public void deleteFilesPermanently(String fileName){
@@ -58,8 +55,6 @@ public void deleteFilesPermanently(String fileName){
 
 //  @B33G5-143
 
-    @FindBy(xpath = "//tr[@data-path='test2']//a[@class='action action-restore permanent']")
-    public WebElement restoreButton;
 public void restoreFiles(String fileName){
     Driver.getDriver().findElement(By.xpath("//tr[@data-path='"+fileName+"']//a[@class='action action-restore permanent']")).click();
     BrowserUtils.waitFor(2);

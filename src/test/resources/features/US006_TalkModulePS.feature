@@ -14,7 +14,7 @@ Scenario Outline: User can create a new conversation by adding any selected part
     | user     |
     | employee |
 
-    @B33G5-150
+  @B33G5-150
   Scenario Outline: User can delete a conversation
     Given the user logged in as "<userType>"
     Given user is on the Talk page
