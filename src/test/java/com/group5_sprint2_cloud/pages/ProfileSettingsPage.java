@@ -26,11 +26,23 @@ public class ProfileSettingsPage {
     @FindBy(xpath = "//li[@data-id=\"settings\"]//a")
     public WebElement linkSettings;
 
+    @FindBy(id = "phone")
+    public WebElement inputPhoneField;
+
     @FindBy(id = "email")
     public WebElement inputEmailField;
 
     @FindBy(id = "languageinput")
     private WebElement languageDropdownElement;
+
+    @FindBy(xpath = "//label[@for='displayname']")
+    private WebElement fullNameLabel;
+
+    @FindBy(xpath = "//label[@for='email']")
+    private WebElement emailLabel;
+
+    @FindBy(xpath = "//label[@for='phone']")
+    private WebElement phoneNumberLabel;
 
     public void goToProfileSettingPage() {
         buttonExpandMenu.click();
@@ -64,6 +76,19 @@ public class ProfileSettingsPage {
         select.selectByValue(language);
         BrowserUtils.sleep(1);
     }
+
+    public String getFullNameLabelText() {
+        return fullNameLabel.getText();
+    }
+
+    public String getEmailLabelText() {
+        return emailLabel.getText();
+    }
+
+    public String getPhoneNumberLabelText() {
+        return phoneNumberLabel.getText();
+    }
+
 }
 
 
