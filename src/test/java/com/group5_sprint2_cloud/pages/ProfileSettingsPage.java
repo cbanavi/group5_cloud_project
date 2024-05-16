@@ -26,7 +26,7 @@ public class ProfileSettingsPage {
     @FindBy(id="expand")
     public WebElement buttonExpandMenu;
 
-    @FindBy(xpath = "//a[text()=\"Settings\"]")
+    @FindBy(xpath = "//li[@data-id=\"settings\"]//a")
     public WebElement linkSettings;
 
     @FindBy(id="email")
