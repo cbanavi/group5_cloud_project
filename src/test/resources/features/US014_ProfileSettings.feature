@@ -4,6 +4,7 @@ Feature: Check/Change Profile Settings Functionality
   @B33G5-173
   Scenario Outline: Full name and username should be the same
     Given the user logged in as "<userType>"
+    When the user is on the Settings page
     When user click to the Avatar
     And  user click to the Settings
     Then user should see the same name and username
