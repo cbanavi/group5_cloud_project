@@ -62,6 +62,7 @@ public class ProfileSettingsPage {
     public void selectLanguageByValue(String language) {
         Select select = new Select(languageDropdownElement); // Create Select object
         select.selectByValue(language);
+        BrowserUtils.sleep(1);
     }
 }
 
