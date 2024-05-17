@@ -2,6 +2,7 @@ package com.group5_sprint2_cloud.step_definitions;
 
 import com.group5_sprint2_cloud.pages.LoginPage;
 
+import com.group5_sprint2_cloud.utilities.ConfigurationReader;
 import io.cucumber.java.en.Given;
 
 import org.slf4j.Logger;
@@ -16,7 +17,7 @@ public class LoginStepDefs {
 /*
            This is for general login
 
-
+*/
             String username = null;
             String password = null;
 
@@ -28,7 +29,7 @@ public class LoginStepDefs {
             password = ConfigurationReader.getProperty("employee_password");
         }
         new LoginPage().login(username,password);
-*/
+
 
         //This is for System login
         if(userType.equalsIgnoreCase("User")){
