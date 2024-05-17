@@ -38,7 +38,7 @@ public class LoginPage {
      }
 
 
-     * If you're logging in with User username, it will come to this method and pull the "USER_USERNAME" from your system
+     // If you're logging in with User username, it will come to this method and pull the "USER_USERNAME" from your system
 
      public void userLoginWithEnv() {
      String usernameEnv = System.getenv("USER_USERNAME");
@@ -49,7 +49,7 @@ public class LoginPage {
      }
 
 
-     * If you're logging in with Employee username, it will come to this method and pull the "EMPLOYEE_USERNAME" from your system
+     //If you're logging in with Employee username, it will come to this method and pull the "EMPLOYEE_USERNAME" from your system
 
      public void employeeLoginWithEnv() {
      String usernameEnv = System.getenv("EMPLOYEE_USERNAME");
@@ -65,7 +65,7 @@ public class LoginPage {
      submit.click();
      }
 
-     * If you're logging in with User username, it will come to this method and pull the "USER_USERNAME" from your system
+     //If you're logging in with User username, it will come to this method and pull the "USER_USERNAME" from your system
 
      public void userLoginWithEnv() {
      String usernameEnv = System.getenv("USER_USERNAME");
@@ -75,7 +75,7 @@ public class LoginPage {
 
      }
 
-     * If you're logging in with Employee username, it will come to this method and pull the "EMPLOYEE_USERNAME" from your system
+     //If you're logging in with Employee username, it will come to this method and pull the "EMPLOYEE_USERNAME" from your system
 
      public void employeeLoginWithEnv() {
      String usernameEnv = System.getenv("EMPLOYEE_USERNAME");
