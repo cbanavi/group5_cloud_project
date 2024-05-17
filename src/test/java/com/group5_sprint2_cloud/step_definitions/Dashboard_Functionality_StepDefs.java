@@ -25,13 +25,13 @@ import org.openqa.selenium.By;
         String employer =ConfigurationReader.getProperty("employee");
         String employee_password = ConfigurationReader.getProperty("employee_password");
 
-        @Given("the user is logged in")
-        public void the_user_logged_in_as() {
-
-        loginPage.login(employer, employee_password);
-
-
-        }
+//        @Given("the user is logged in")
+//        public void the_user_logged_in_as() {
+//
+//        loginPage.login(employer, employee_password);
+//
+//
+//        }
 
         @When("the user accesses the dashboard")
         public void the_user_accesses_the_dashboard() {

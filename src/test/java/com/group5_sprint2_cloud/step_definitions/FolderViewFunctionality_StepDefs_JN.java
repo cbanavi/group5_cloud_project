@@ -13,10 +13,10 @@ public class FolderViewFunctionality_StepDefs_JN  {
     LoginStepDefs loginStepDefs = new LoginStepDefs();
 
 
-    @Given("User is logged In")
-    public void userIsLoggedIn(String userType) {
-        loginStepDefs.the_user_logged_in_as(userType);
-    }
+//    @Given("User is logged In")
+//    public void userIsLoggedIn(String userType) {
+//        loginStepDefs.the_user_logged_in_as(userType);
+//    }
 
     @Then("User is on the Files page")
     public void userIsOnTheFilesPage() {
