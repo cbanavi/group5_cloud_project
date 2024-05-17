@@ -30,14 +30,14 @@ public class LoginStepDefs {
         }
         new LoginPage().login(username,password);
 
-
+/*
         //This is for System login
         if(userType.equalsIgnoreCase("User")){
             new LoginPage().userLoginWithEnv();
         }else if(userType.equalsIgnoreCase("Employee")){
             new LoginPage().employeeLoginWithEnv();
         }
-
+*/
 
     }
 
