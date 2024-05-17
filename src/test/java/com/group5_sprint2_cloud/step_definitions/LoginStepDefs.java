@@ -12,7 +12,7 @@ public class LoginStepDefs {
     @Given("the user logged in as {string}")
     public void the_user_logged_in_as(String userType) {
 
-        
+
 /*
            This is for general login
 
@@ -36,12 +36,8 @@ public class LoginStepDefs {
         }else if(userType.equalsIgnoreCase("Employee")){
             new LoginPage().employeeLoginWithEnv();
         }
+
+
     }
 
 }
-
-
-
-
-
-
