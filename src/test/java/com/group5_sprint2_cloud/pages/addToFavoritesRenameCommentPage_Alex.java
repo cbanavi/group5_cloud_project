@@ -55,6 +55,9 @@ public class addToFavoritesRenameCommentPage_Alex {
   @FindBy(xpath = "(//input[@type='submit'])[2]")
     public WebElement commentSubmit;
 
+  @FindBy(xpath = "//div[contains(@class ,'comment__message')]")
+    public WebElement commentMessage;
+
 
 
 

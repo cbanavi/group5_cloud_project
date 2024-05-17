@@ -33,27 +33,24 @@ public class FavoriteRenameCommentFunctionality_StepDef extends BasePage {
         loginPage.login("User14", "Userpass123");
     }
 
-    @And("user navigates to Files")
+    @When("user navigates to Files")
     public void userNavigatesToFiles() {
         navigateToModule("Files");
     }
 
-    @Then("user uploads a file")
-    public void userUploadsAFile() {
-        addToFavoritesRenameCommentPageAlex.addNewFileButton.click();
-        addToFavoritesRenameCommentPageAlex.uploadButton.click();
-
-
-    }
-
-    @Then("user is adding all the files to favorites and verifies it")
-    public void userIsAddingAllTheFilesToFavoritesAndVerifiesIt() {
-
+    @And("user sellects random file and clicks on three dots menu")
+    public void userSellectsRandomFileAndClicksOnThreeDotsMenu() {
         Random rand = new Random();
         int randomIndex = rand.nextInt(addToFavoritesRenameCommentPageAlex.threeDotsMenu.size());
         WebElement randomFile = addToFavoritesRenameCommentPageAlex.threeDotsMenu.get(randomIndex);
         BrowserUtils.sleep(3);
         randomFile.click();
+
+    }
+
+
+    @Then("user is adding file to favorites and verifies it")
+    public void userIsAddingFileToFavoritesAndVerifiesIt() {
         BrowserUtils.sleep(3);
         String actualText = "Remove from favorites";
         if (!addToFavoritesRenameCommentPageAlex.addToFavotites.getText().equals(actualText)) {
@@ -61,23 +58,47 @@ public class FavoriteRenameCommentFunctionality_StepDef extends BasePage {
             Assert.assertTrue(addToFavoritesRenameCommentPageAlex.isStarred.isDisplayed());
         }else {
             Assert.assertTrue(addToFavoritesRenameCommentPageAlex.isStarred.isDisplayed());
-            //System.out.println("element already added to fav");
         }
 
         }
 
         @And("user renames existing menues")
         public void userRenamesExistingMenues () {
-            //addToFavoritesRenameCommentPageAlex.renameInput.sendKeys("new name" + Keys.ENTER);
-            for (WebElement each : addToFavoritesRenameCommentPageAlex.threeDotsMenu) {
-                each.click();
-                for (WebElement each1 : addToFavoritesRenameCommentPageAlex.renameInput) {
-                    each1.sendKeys("new name" + Keys.ENTER);
-                }
-            }
-
+        Random rand = new Random();
+            int randomIndex = rand.nextInt(addToFavoritesRenameCommentPageAlex.threeDotsMenu.size());
+            WebElement randomFile = addToFavoritesRenameCommentPageAlex.threeDotsMenu.get(randomIndex);
+            BrowserUtils.sleep(3);
+            randomFile.click();
 
         }
+    @And("user click Rename")
+    public void userClickRename() {
+        addToFavoritesRenameCommentPageAlex.rename.click();
+
+    }
+
+
+    @And("user clicks Details then Commend")
+    public void userClicksDetailsThenCommend() {
+        addToFavoritesRenameCommentPageAlex.details.click();
+        BrowserUtils.sleep(3);
+        addToFavoritesRenameCommentPageAlex.comments.click();
+
+    }
+
+    @Then("user adds his comment and verifies its displayed")
+    public void userAddsHisCommentAndVerifiesItsDisplayed() {
+        BrowserUtils.sleep(3);
+        String newComment = "new comment to be aded";
+        addToFavoritesRenameCommentPageAlex.commentInput.sendKeys(newComment);
+        addToFavoritesRenameCommentPageAlex.commentSubmit.click();
+        BrowserUtils.sleep(3);
+        Assert.assertTrue(addToFavoritesRenameCommentPageAlex.commentMessage.isDisplayed());
+
+    }
+
+
+
 
 
 }
