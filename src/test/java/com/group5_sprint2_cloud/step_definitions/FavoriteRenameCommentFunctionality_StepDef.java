@@ -18,6 +18,8 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.Random;
 
 public class FavoriteRenameCommentFunctionality_StepDef extends BasePage {
     addToFavoritesRenameCommentPage_Alex addToFavoritesRenameCommentPageAlex
@@ -26,7 +28,7 @@ public class FavoriteRenameCommentFunctionality_StepDef extends BasePage {
     Actions actions = new Actions(Driver.getDriver());
 
 
-    @Given("user loged in as {string}")
+    @Given("user logged in as {string}")
     public void user_loged_in_as(String user) {
         loginPage.login("User14", "Userpass123");
     }
@@ -36,38 +38,47 @@ public class FavoriteRenameCommentFunctionality_StepDef extends BasePage {
         navigateToModule("Files");
     }
 
+    @Then("user uploads a file")
+    public void userUploadsAFile() {
+        addToFavoritesRenameCommentPageAlex.addNewFileButton.click();
+        addToFavoritesRenameCommentPageAlex.uploadButton.click();
+
+
+    }
+
     @Then("user is adding all the files to favorites and verifies it")
     public void userIsAddingAllTheFilesToFavoritesAndVerifiesIt() {
-        for (WebElement eachFile : addToFavoritesRenameCommentPageAlex.filesToBeAddedToFav) {
-            if (eachFile.isDisplayed()) {
-                BrowserUtils.sleep(3);
-                for (WebElement each : addToFavoritesRenameCommentPageAlex.threeDotsMenu) {
-                    each.click();
-                    BrowserUtils.sleep(3);
-                    addToFavoritesRenameCommentPageAlex.addToFavotites.click();
 
+        Random rand = new Random();
+        int randomIndex = rand.nextInt(addToFavoritesRenameCommentPageAlex.threeDotsMenu.size());
+        WebElement randomFile = addToFavoritesRenameCommentPageAlex.threeDotsMenu.get(randomIndex);
+        BrowserUtils.sleep(3);
+        randomFile.click();
+        BrowserUtils.sleep(3);
+        String actualText = "Remove from favorites";
+        if (!addToFavoritesRenameCommentPageAlex.addToFavotites.getText().equals(actualText)) {
+            addToFavoritesRenameCommentPageAlex.addToFavotites.click();
+            Assert.assertTrue(addToFavoritesRenameCommentPageAlex.isStarred.isDisplayed());
+        }else {
+            Assert.assertTrue(addToFavoritesRenameCommentPageAlex.isStarred.isDisplayed());
+            //System.out.println("element already added to fav");
+        }
 
+        }
+
+        @And("user renames existing menues")
+        public void userRenamesExistingMenues () {
+            //addToFavoritesRenameCommentPageAlex.renameInput.sendKeys("new name" + Keys.ENTER);
+            for (WebElement each : addToFavoritesRenameCommentPageAlex.threeDotsMenu) {
+                each.click();
+                for (WebElement each1 : addToFavoritesRenameCommentPageAlex.renameInput) {
+                    each1.sendKeys("new name" + Keys.ENTER);
                 }
-
-            } else {
-                return;
             }
-Assert.assertTrue(eachFile.);
-        }
-    }
 
-    @And("user renames existing menues")
-    public void userRenamesExistingMenues() {
-        //addToFavoritesRenameCommentPageAlex.renameInput.sendKeys("new name" + Keys.ENTER);
-        for (WebElement each : addToFavoritesRenameCommentPageAlex.threeDotsMenu) {
-            each.click();
-            for (WebElement each1 : addToFavoritesRenameCommentPageAlex.renameInput) {
-                each1.sendKeys("new name" + Keys.ENTER);
-            }
+
         }
 
-
-    }
 
 }
 

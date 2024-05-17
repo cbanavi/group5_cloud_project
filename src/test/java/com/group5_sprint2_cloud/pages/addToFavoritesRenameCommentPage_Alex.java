@@ -18,14 +18,21 @@ public class addToFavoritesRenameCommentPage_Alex {
   @FindBy(xpath ="//a[@class='menuitem action action-favorite permanent']")
   public WebElement addToFavotites;
 
-    @FindBy(xpath = "//span[@class='icon icon-starred']")
-    public List<WebElement> isStarred;
+    @FindBy(xpath = "//span[contains(@class, 'icon icon-starred')]")
+    public WebElement isStarred;
 
     @FindBy(xpath = "//div[@class='thumbnail']")
     public List<WebElement> filesToBeAddedToFav;
 
     @FindBy(xpath = "//a[@class='nav-icon-favorites svg active']")
     public WebElement favoritesFiles;
+
+    @FindBy(xpath = "//div/a[@class='button new']")
+    public WebElement addNewFileButton;
+
+    @FindBy(css = "#file_upload_start")
+    public WebElement uploadButton;
+
 
 
     //rename functionality
