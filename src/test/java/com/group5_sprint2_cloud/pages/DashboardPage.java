@@ -31,11 +31,6 @@ import org.openqa.selenium.support.PageFactory;
     @FindBy (xpath = "(//a[@href='/index.php/apps/photos/'])[1]")
     public WebElement photos;
 
-
-    @FindBy (xpath = "(//a[@href='/index.php/apps/photos/'])[1]")
-    public WebElement photos;
-
-
     @FindBy (xpath = "(//a[@aria-label='Activity'])[1]")
     public WebElement activity;
 
@@ -69,9 +64,6 @@ import org.openqa.selenium.support.PageFactory;
     public WebElement userName;
 
 
-    @FindBy (xpath = "//span[@class='user-status-menu-item__header']")
-    public WebElement userName;
-
 
     @FindBy (xpath = "//a[@class ='edit-panels icon-rename']")
     public WebElement customizeButton;
@@ -80,9 +72,6 @@ import org.openqa.selenium.support.PageFactory;
     @FindBy (xpath = "//button[@class= 'user-status-menu-item__toggle user-status-menu-item__toggle--inline']")
     public WebElement setStatusButton;
 
-
-    @FindBy (xpath = "//button[@class='user-status-menu-item__toggle user-status-menu-item__toggle--inline']")
-    public WebElement setStatusButton;
 
     @FindBy(xpath = "(//a[@aria-label='Talk'])[1]")
     public WebElement talk;
