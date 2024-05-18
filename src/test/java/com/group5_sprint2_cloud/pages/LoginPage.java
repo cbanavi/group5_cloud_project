@@ -1,7 +1,6 @@
 package com.group5_sprint2_cloud.pages;
 
 
-
 import com.group5_sprint2_cloud.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,11 +26,8 @@ public class LoginPage {
         passwordInput.sendKeys(password);
         submit.click();
 
-
-
     }
-
-    /*
+ /*
      public void loginNoProperties(String username, String password) {
      userName.sendKeys(username);
      passwordInput.sendKeys(password);
@@ -57,6 +53,7 @@ public class LoginPage {
      loginNoProperties(usernameEnv, passwordEnv);
 
      }
-     */
+*/
 
+  
 }
