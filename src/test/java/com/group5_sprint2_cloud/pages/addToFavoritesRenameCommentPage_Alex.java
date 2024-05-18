@@ -14,24 +14,13 @@ public class addToFavoritesRenameCommentPage_Alex {
    @FindBy(xpath ="//td//span[@class='icon icon-more']")
   public  List<WebElement> threeDotsMenu;
 
-
-  @FindBy(xpath ="//a[@class='menuitem action action-favorite permanent']")
+ @FindBy(xpath ="//a[@class='menuitem action action-favorite permanent']")
   public WebElement addToFavotites;
 
     @FindBy(xpath = "//span[contains(@class, 'icon icon-starred')]")
     public WebElement isStarred;
 
-    @FindBy(xpath = "//div[@class='thumbnail']")
-    public List<WebElement> filesToBeAddedToFav;
 
-    @FindBy(xpath = "//a[@class='nav-icon-favorites svg active']")
-    public WebElement favoritesFiles;
-
-    @FindBy(xpath = "//div/a[@class='button new']")
-    public WebElement addNewFileButton;
-
-    @FindBy(css = "#file_upload_start")
-    public WebElement uploadButton;
 
 
 
@@ -40,7 +29,7 @@ public class addToFavoritesRenameCommentPage_Alex {
   public WebElement rename;
 
   @FindBy(xpath = "//span[@class='innernametext']")
-    public List<WebElement> renameInput;
+    public WebElement renameInput;
 
 //comment functionality
   @FindBy(xpath =" //span[.='Details']")

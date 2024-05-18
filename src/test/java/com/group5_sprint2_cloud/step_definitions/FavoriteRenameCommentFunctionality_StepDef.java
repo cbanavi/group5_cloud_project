@@ -74,6 +74,8 @@ public class FavoriteRenameCommentFunctionality_StepDef extends BasePage {
     @And("user click Rename")
     public void userClickRename() {
         addToFavoritesRenameCommentPageAlex.rename.click();
+        addToFavoritesRenameCommentPageAlex.rename.clear();
+        addToFavoritesRenameCommentPageAlex.rename.sendKeys("new name" + Keys.ENTER);
 
     }
 

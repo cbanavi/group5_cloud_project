@@ -12,7 +12,7 @@ Feature:Add to Favorites/Rename/Comment on File Functionality
 		Examples:
 			| userType |
 			| user     |
-			#| employee |
+			| employee |
 
 
 	@B33G5-130
@@ -25,7 +25,7 @@ Feature:Add to Favorites/Rename/Comment on File Functionality
 		Examples:
 			| userType |
 			| user     |
-			#| employee |
+			| employee |
 
 	@B33G5-131
 	Scenario Outline: user can comment on File Functionality
@@ -39,4 +39,4 @@ Feature:Add to Favorites/Rename/Comment on File Functionality
 		Examples:
 			| userType |
 			| user     |
-			#| employee |
+			| employee |
