@@ -42,25 +42,30 @@ public class FavoriteRenameCommentFunctionality_StepDef extends BasePage {
         if (!AddToFavoritesRenameCommentPageAlex.addToFavotites.getText().equals(actualText)) {
             AddToFavoritesRenameCommentPageAlex.addToFavotites.click();
             Assert.assertTrue(AddToFavoritesRenameCommentPageAlex.isStarred.isDisplayed());
-        }else {
+        } else {
             Assert.assertTrue(AddToFavoritesRenameCommentPageAlex.isStarred.isDisplayed());
         }
-        }
+    }
 
-        @And("user renames existing menues")
-        public void userRenamesExistingMenues () {
+    @And("user renames existing menues")
+    public void userRenamesExistingMenues() {
         Random rand = new Random();
-            int randomIndex = rand.nextInt(AddToFavoritesRenameCommentPageAlex.threeDotsMenu.size());
-            WebElement randomFile = AddToFavoritesRenameCommentPageAlex.threeDotsMenu.get(randomIndex);
-            BrowserUtils.sleep(3);
-            randomFile.click();
+        int randomIndex = rand.nextInt(AddToFavoritesRenameCommentPageAlex.threeDotsMenu.size());
+        WebElement randomFile = AddToFavoritesRenameCommentPageAlex.threeDotsMenu.get(randomIndex);
+        BrowserUtils.sleep(3);
+        randomFile.click();
 
-        }
+    }
+
     @And("user click Rename")
     public void userClickRename() {
         AddToFavoritesRenameCommentPageAlex.rename.click();
         AddToFavoritesRenameCommentPageAlex.rename.clear();
         AddToFavoritesRenameCommentPageAlex.rename.sendKeys("new name" + Keys.ENTER);
+    }
+
+    @Then("user verifys folders name")
+    public void userVerifysFoldersName() {
     }
 
 
@@ -83,6 +88,7 @@ public class FavoriteRenameCommentFunctionality_StepDef extends BasePage {
 
     }
 }
+
 
 
 
