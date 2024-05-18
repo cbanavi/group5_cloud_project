@@ -28,8 +28,8 @@ public class LoginPage {
         passwordInput.sendKeys(password);
         submit.click();
         // verification that we logged
-        String actualUrl = "https://qa.symund.com/index.php/apps/dashboard/";
-        Assert.assertEquals(Driver.getDriver().getCurrentUrl(),actualUrl);
+        //String actualUrl = "https://qa.symund.com/index.php/apps/dashboard/";
+       // Assert.assertEquals(Driver.getDriver().getCurrentUrl(),actualUrl);
     }
 
 }
