@@ -30,63 +30,53 @@ public class FavoriteRenameCommentFunctionality_StepDef extends BasePage {
         Random rand = new Random();
         int randomIndex = rand.nextInt(AddToFavoritesRenameCommentPageAlex.threeDotsMenu.size());
         WebElement randomFile = AddToFavoritesRenameCommentPageAlex.threeDotsMenu.get(randomIndex);
-        BrowserUtils.sleep(3);
         randomFile.click();
 
     }
 
     @Then("user is adding file to favorites and verifies it")
     public void userIsAddingFileToFavoritesAndVerifiesIt() {
-        BrowserUtils.sleep(3);
         String actualText = "Remove from favorites";
         if (!AddToFavoritesRenameCommentPageAlex.addToFavotites.getText().equals(actualText)) {
             AddToFavoritesRenameCommentPageAlex.addToFavotites.click();
-            Assert.assertTrue(AddToFavoritesRenameCommentPageAlex.isStarred.isDisplayed());
         } else {
             Assert.assertTrue(AddToFavoritesRenameCommentPageAlex.isStarred.isDisplayed());
         }
     }
 
-    @And("user renames existing menues")
-    public void userRenamesExistingMenues() {
-        Random rand = new Random();
-        int randomIndex = rand.nextInt(AddToFavoritesRenameCommentPageAlex.threeDotsMenu.size());
-        WebElement randomFile = AddToFavoritesRenameCommentPageAlex.threeDotsMenu.get(randomIndex);
-        BrowserUtils.sleep(3);
-        randomFile.click();
-
+    @And("user clicks on three dots menu of first file")
+    public void userClicksOnThreeDotsMenuOfFirstFile() {
+        AddToFavoritesRenameCommentPageAlex.firstFileThreeDotsMenu.click();
     }
 
     @And("user click Rename")
     public void userClickRename() {
         AddToFavoritesRenameCommentPageAlex.rename.click();
-        AddToFavoritesRenameCommentPageAlex.rename.clear();
-        AddToFavoritesRenameCommentPageAlex.rename.sendKeys("new name" + Keys.ENTER);
+        new Actions(Driver.getDriver()).sendKeys("new name" + Keys.ENTER).perform();
     }
 
     @Then("user verifys folders name")
     public void userVerifysFoldersName() {
+        Assert.assertEquals("new name", AddToFavoritesRenameCommentPageAlex.firstFile.getText());
     }
 
 
     @And("user clicks Details then Commend")
     public void userClicksDetailsThenCommend() {
         AddToFavoritesRenameCommentPageAlex.details.click();
-        BrowserUtils.sleep(3);
         AddToFavoritesRenameCommentPageAlex.comments.click();
 
     }
 
     @Then("user adds his comment and verifies its displayed")
     public void userAddsHisCommentAndVerifiesItsDisplayed() {
-        BrowserUtils.sleep(3);
         String newComment = "new comment to be aded";
         AddToFavoritesRenameCommentPageAlex.commentInput.sendKeys(newComment);
         AddToFavoritesRenameCommentPageAlex.commentSubmit.click();
-        BrowserUtils.sleep(3);
         Assert.assertTrue(AddToFavoritesRenameCommentPageAlex.commentMessage.isDisplayed());
 
     }
+
 }
 
 

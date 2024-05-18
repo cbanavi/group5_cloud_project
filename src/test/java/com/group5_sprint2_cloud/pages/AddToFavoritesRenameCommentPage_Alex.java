@@ -31,6 +31,12 @@ public class AddToFavoritesRenameCommentPage_Alex {
   @FindBy(xpath = "//span[@class='innernametext']")
     public WebElement renameInput;
 
+  @FindBy(xpath = "(//span[@class='innernametext'])[1]")
+  public WebElement firstFile;
+
+    @FindBy(xpath ="(//td//span[@class='icon icon-more'])[1]")
+    public  WebElement firstFileThreeDotsMenu;
+
 //comment functionality
   @FindBy(xpath =" //span[.='Details']")
     public WebElement details;

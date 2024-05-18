@@ -19,7 +19,7 @@ Feature:Add to Favorites/Rename/Comment on File Functionality
 	Scenario Outline: User can rename any file from its own three dots menu
 		Given the user logged in as "<userType>"
 		When user navigates to Files
-		And user sellects random file and clicks on three dots menu
+		And user clicks on three dots menu of first file
 		And user click Rename
 		Then user verifys folders name
 		Examples:
