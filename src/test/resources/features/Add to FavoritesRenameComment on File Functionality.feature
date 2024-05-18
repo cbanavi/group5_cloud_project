@@ -5,7 +5,7 @@ Feature:Add to Favorites/Rename/Comment on File Functionality
 
 	@B33G5-103
 	Scenario Outline: Add any file to favorites
-		Given user logged in as "<usertype>"
+		Given the user logged in as "<userType>"
 		When user navigates to Files
 		And user sellects random file and clicks on three dots menu
 		Then user is adding file to favorites and verifies it
@@ -17,7 +17,7 @@ Feature:Add to Favorites/Rename/Comment on File Functionality
 
 	@B33G5-130
 	Scenario Outline: User can rename any file from its own three dots menu
-		Given user logged in as "<usertype>"
+		Given the user logged in as "<userType>"
 		When user navigates to Files
 		And user sellects random file and clicks on three dots menu
 		And user click Rename
@@ -29,13 +29,11 @@ Feature:Add to Favorites/Rename/Comment on File Functionality
 
 	@B33G5-131
 	Scenario Outline: user can comment on File Functionality
-		Given user logged in as "<usertype>"
+		Given the user logged in as "<userType>"
 		When user navigates to Files
 		And user sellects random file and clicks on three dots menu
 		And user clicks Details then Commend
 		Then user adds his comment and verifies its displayed
-
-
 		Examples:
 			| userType |
 			| user     |

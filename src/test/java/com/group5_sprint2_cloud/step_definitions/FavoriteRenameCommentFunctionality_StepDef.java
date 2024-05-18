@@ -19,14 +19,6 @@ import java.util.Random;
 public class FavoriteRenameCommentFunctionality_StepDef extends BasePage {
     AddToFavoritesRenameCommentPage_Alex AddToFavoritesRenameCommentPageAlex
             = new AddToFavoritesRenameCommentPage_Alex();
-    LoginPage loginPage = new LoginPage();
-    Actions actions = new Actions(Driver.getDriver());
-
-
-    @Given("user logged in as {string}")
-    public void user_loged_in_as(String user) {
-        loginPage.login("User14", "Userpass123");
-    }
 
     @When("user navigates to Files")
     public void userNavigatesToFiles() {
@@ -43,7 +35,6 @@ public class FavoriteRenameCommentFunctionality_StepDef extends BasePage {
 
     }
 
-
     @Then("user is adding file to favorites and verifies it")
     public void userIsAddingFileToFavoritesAndVerifiesIt() {
         BrowserUtils.sleep(3);
@@ -54,7 +45,6 @@ public class FavoriteRenameCommentFunctionality_StepDef extends BasePage {
         }else {
             Assert.assertTrue(AddToFavoritesRenameCommentPageAlex.isStarred.isDisplayed());
         }
-
         }
 
         @And("user renames existing menues")
@@ -92,11 +82,6 @@ public class FavoriteRenameCommentFunctionality_StepDef extends BasePage {
         Assert.assertTrue(AddToFavoritesRenameCommentPageAlex.commentMessage.isDisplayed());
 
     }
-
-
-
-
-
 }
 
 
