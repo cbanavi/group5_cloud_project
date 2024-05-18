@@ -21,7 +21,6 @@ public class ActivityStepDefs_CB extends BasePage {
 
     SymundActivityPage_CB symundActivityPageCb = new SymundActivityPage_CB();
 
-    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 
     @When("User clicks Activity module")
     public void user_clicks_activity_module() {
