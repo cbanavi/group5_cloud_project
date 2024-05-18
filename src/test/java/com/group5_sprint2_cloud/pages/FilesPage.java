@@ -20,11 +20,12 @@ public class FilesPage {
 
     }
 
-    @FindBy(css = ".button.new")
-    public WebElement addIcon;
 
-    @FindBy(css = "body > div:nth-child(30) > div:nth-child(2) > div:nth-child(4) > table:nth-child(5) > tbody:nth-child(2) > tr:nth-child(4) > td:nth-child(2) > a:nth-child(1) > span:nth-child(2)")
+    @FindBy(xpath = "//tr[@data-file='termih.txt']")
     public WebElement uploadedFile;
+
+    @FindBy(xpath = "(//tbody[@id='fileList'])[1]")
+    public WebElement fileList;
 
 
     @FindBy(xpath = "//a[@data-templatename='New folder']")
@@ -36,18 +37,14 @@ public class FilesPage {
     @FindBy(xpath = "(//span[.='ATI2'])[1]")
     public WebElement uploadedNewFolder;
 
-    @FindBy(xpath = "(//span[.='termih'])[2]/../..//a[2]//span[1]")
-    public WebElement threeDotsButton;
+    @FindBy(xpath = "//tr[@data-file='termih.txt']/td[1]")
+    public WebElement uploadedFileCheckBox;
 
-    @FindBy(xpath = "((//span[.='ATI2'])[2]/..//a[2]//span[1]")
-    public WebElement threeDotsButtonFolder;
+    @FindBy(xpath = "(//span[@id='selectedActionsList'])[1]")
+    public WebElement threeDots;
 
-    @FindBy(xpath = "//span[.='Delete file']")
-    public WebElement deleteButton;
-
-    @FindBy(xpath = "//*[@id=\"rightClickMenu\"]/ul/li[6]/a/span[2]")
-    public WebElement deleteButtonFolder;
-
+    @FindBy(css = ".menuitem.action.delete.permanent")
+    public WebElement delete;
 
     @FindBy(xpath = "//*[@id=\"filestable\"]/tfoot/tr/td[2]/span")
     public WebElement fileSummary;
@@ -61,17 +58,10 @@ public class FilesPage {
     @FindBy(xpath = "(//li/a[@aria-label='Files'])[1]")
     public WebElement filesBtn;
 
-    @FindBy(xpath = "(//*[@id=\"body-user\"]/div[9]/h2")
-    public WebElement conflictMessage;
 
-    @FindBy(xpath = "(//button[@class='cancel primary']")
-    public WebElement conflictCancel;
 
-    @FindBy(xpath = "//*[@id=\"oc-dialog-fileexists-content\"]/table/tbody/tr/th[2]/label")
-    public WebElement conflictAlreadyExistCheckbox;
 
-    @FindBy(xpath = "//*[@id=\"body-user\"]/div[9]/div[2]/button[2]")
-    public WebElement conflictContinue;
+
 
 
 

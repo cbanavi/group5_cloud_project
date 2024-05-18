@@ -20,7 +20,7 @@ public class DashboardPage {
         public WebElement dashboard;
 
 
-        @FindBy(xpath = "(//li/a[@aria-label='Files'])[1]")
+        @FindBy(xpath = "((//li/a[@aria-label='Files'])[1]")
         public WebElement filesBtn;
 
         @FindBy (xpath = "(//a[@href='/index.php/apps/photos/'])[1]")

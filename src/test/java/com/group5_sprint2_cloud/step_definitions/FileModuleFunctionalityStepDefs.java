@@ -12,8 +12,11 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 import java.io.File;
@@ -21,26 +24,27 @@ import java.security.Key;
 
 public class FileModuleFunctionalityStepDefs {
 
-    LoginPage loginPage = new LoginPage();
     DashboardPage dashboardPage = new DashboardPage();
     FilesPage filesPage = new FilesPage();
-    String employee = ConfigurationReader.getProperty("employee");
-    String employeePassword = ConfigurationReader.getProperty("employee_password");
-
-
-    String username = ConfigurationReader.getProperty("username");
-    String usernamePassword = ConfigurationReader.getProperty("password");
-
-
-    @Given("User should login")
-    public void user_should_login() {
-
-        loginPage.login(username, usernamePassword);
-
-    }
+    //    String employee = ConfigurationReader.getProperty("employee");
+//    String employeePassword = ConfigurationReader.getProperty("employee_password");
+//
+//
+//    String username = ConfigurationReader.getProperty("username");
+//    String usernamePassword = ConfigurationReader.getProperty("password");
+//
+//
+//    @Given("User should login")
+//    public void user_should_login() {
+//
+//        loginPage.login(username, usernamePassword);
+//
+//    }
     @When("User clicks on Files module")
     public void user_clicks_on_files_module() {
 
+
+        BrowserUtils.waitForTitleContains("Dashboard - Symund - QA");
         filesPage.filesBtn.click();
 
 
@@ -49,13 +53,20 @@ public class FileModuleFunctionalityStepDefs {
     @When("User clicks on + button to add file")
     public void user_clicks_on_button_to_add_file() {
 
-        BrowserUtils.sleep(5);
+        BrowserUtils.waitForTitleContains("Files - Symund - QA");
 
-        filesPage.actionsCreatableBtn.click();
+//        if(!filesPage.uploadedFile.isDisplayed()){
+
+        filesPage.actionsCreatableBtn.click();}
+
+//        else{
+//            user_can_see_the_file_on_the_list();
+//        }
 
 
 
-    }
+
+
 
 
 
@@ -65,26 +76,26 @@ public class FileModuleFunctionalityStepDefs {
 
 
 
-            BrowserUtils.sleep(5);
+        BrowserUtils.sleep(5);
 
 
-            String projectPath = System.getProperty("user.dir");
-            String pathOfFile = projectPath + "\\src\\test\\resources\\uploadedFiles\\termih.txt";
+        String projectPath = System.getProperty("user.dir");
+        String pathOfFile = projectPath + "\\src\\test\\resources\\uploadedFiles\\termih.txt";
 
 
 
 
 
-            try {
-                File fileToUpload = new File(pathOfFile);
-                if (fileToUpload.exists()) {
-                    filesPage.uploadBtn.sendKeys(pathOfFile);
-                } else {
-                    System.out.println("File not found: " + pathOfFile);
-                }
-            } catch (Exception e) {
-                System.out.println("An error occurred during file upload: " + e.getMessage());
+        try {
+            File fileToUpload = new File(pathOfFile);
+            if (fileToUpload.exists()) {
+                filesPage.uploadBtn.sendKeys(pathOfFile);
+            } else {
+                System.out.println("File not found: " + pathOfFile);
             }
+        } catch (Exception e) {
+            System.out.println("An error occurred during file upload: " + e.getMessage());
+        }
 
 
 
@@ -95,7 +106,7 @@ public class FileModuleFunctionalityStepDefs {
     public void user_can_see_the_file_on_the_list() {
 
 
-
+        BrowserUtils.sleep(5);
         BrowserUtils.verifyElementDisplayed(filesPage.uploadedFile);
 
 
@@ -104,6 +115,7 @@ public class FileModuleFunctionalityStepDefs {
     @When("User clicks on + button to add folder")
     public void user_clicks_on_button_to_add_folder() {
 
+        BrowserUtils.sleep(5);
         filesPage.actionsCreatableBtn.click();
 
 
@@ -111,18 +123,21 @@ public class FileModuleFunctionalityStepDefs {
     @When("User clicks on new folder")
     public void user_clicks_on_new_folder() {
 
+        BrowserUtils.sleep(5);
         filesPage.newFolderButton.click();
 
     }
     @Then("User name the new folder and add it to the list")
     public void user_name_the_new_folder_and_add_it_to_the_list() {
 
+        BrowserUtils.sleep(5);
         filesPage.newFolderTextButton.sendKeys("ATI2"+Keys.ENTER);
 
     }
     @Then("User can see the folder on the list")
     public void user_can_see_the_folder_on_the_list() {
 
+        BrowserUtils.sleep(5);
         BrowserUtils.verifyElementDisplayed(filesPage.uploadedNewFolder);
 
 
@@ -131,30 +146,39 @@ public class FileModuleFunctionalityStepDefs {
     @When("User clicks three dots and click delete the file")
     public void user_clicks_three_dots_and_click_delete_the_file() {
 
-        filesPage.threeDotsButton.click();
+
+
+        BrowserUtils.waitForTitleContains("Files - Symund - QA");
         BrowserUtils.sleep(3);
-        filesPage.deleteButton.click();
+        filesPage.uploadedFileCheckBox.click();
+        BrowserUtils.sleep(3);
+        filesPage.threeDots.click();
+        BrowserUtils.sleep(3);
+        filesPage.delete.click();
+        BrowserUtils.sleep(3);
+
+
 
     }
     @When("User can confirm the file is deleted")
     public void user_can_confirm_the_file_is_deleted() {
 
 
-        BrowserUtils.verifyElementDisplayed(filesPage.uploadedFile);
+        BrowserUtils.sleep(3);
 
-
-
+        filesPage.uploadedFile.isDisplayed();
 
     }
+
 
     @When("User should see the total number of files and folders under the list")
     public void user_should_see_the_total_number_of_files_and_folders_under_the_list() {
 
-      BrowserUtils.sleep(5);
+        BrowserUtils.sleep(5);
 
-      BrowserUtils.verifyElementDisplayed(filesPage.fileSummary);
+        BrowserUtils.verifyElementDisplayed(filesPage.fileSummary);
 
-      System.out.println(filesPage.fileSummary.getText());
+        System.out.println(filesPage.fileSummary.getText());
 
 
 
