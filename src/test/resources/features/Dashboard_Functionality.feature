@@ -1,10 +1,8 @@
 @ati
 Feature: User Interface Customization
 
-  #Background:
-    #Given the user is logged in
 
-  #Scenario: User sees modules and username after login
+
   Scenario Outline: User sees modules and username after login
     Given the user logged in as "<userType>"
     When the user accesses the dashboard
@@ -16,7 +14,7 @@ Feature: User Interface Customization
       | employee |
 
 
-  #Scenario: User customizes widgets
+
   Scenario Outline: User customizes widgets
     Given the user logged in as "<userType>"
     When the user clicks on the Customize button
@@ -27,13 +25,14 @@ Feature: User Interface Customization
       | user     |
       | employee |
 
-  #Scenario: User sets status
+
   Scenario Outline: User sets status
+    Given the user logged in as "<userType>"
     When the user clicks on the Set Status button
     And selects a status option
-    Given the user logged in as "<userType>"
     Examples:
       | userType |
       | user     |
       | employee |
+
 
