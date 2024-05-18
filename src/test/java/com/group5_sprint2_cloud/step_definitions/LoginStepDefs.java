@@ -18,6 +18,7 @@ public class LoginStepDefs {
            This is for general login
 
 */
+
             String username = null;
             String password = null;
 
@@ -41,4 +42,6 @@ public class LoginStepDefs {
 
     }
 
+
 }
+
