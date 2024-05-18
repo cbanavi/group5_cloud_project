@@ -21,11 +21,11 @@ public class Edit_EnterProfileSettingsFunctionality_StepDefs_EI extends BasePage
 
     LoginStepDefs loginStepDefs = new LoginStepDefs();
 
-    @Given("User is logged In")
-    public void userIsLoggedIn(String userType) {
-        loginStepDefs.the_user_logged_in_as(userType);
-        BrowserUtils.sleep(5);
-    }
+//    @Given("User is logged In")
+//    public void userIsLoggedIn(String userType) {
+//        loginStepDefs.the_user_logged_in_as(userType);
+//        BrowserUtils.sleep(5);
+//    }
 
     @When("User navigates to Profile Settings page")
     public void user_navigates_to_profile_settings_page() {
