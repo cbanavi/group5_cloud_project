@@ -76,6 +76,10 @@ public class FavoriteRenameCommentFunctionality_StepDef extends BasePage {
         addToFavoritesRenameCommentPageAlex.rename.click();
         addToFavoritesRenameCommentPageAlex.rename.clear();
         addToFavoritesRenameCommentPageAlex.rename.sendKeys("new name" + Keys.ENTER);
+        Actions.moveToElement( element ).perform;
+                [8:12 PM]
+        Then actions.click(element).perform;
+
 
     }
 
