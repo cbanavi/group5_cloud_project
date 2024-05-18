@@ -2,28 +2,23 @@ package com.group5_sprint2_cloud.step_definitions;
 
 import com.group5_sprint2_cloud.pages.BasePage;
 import com.group5_sprint2_cloud.pages.LoginPage;
-import com.group5_sprint2_cloud.pages.addToFavoritesRenameCommentPage_Alex;
+import com.group5_sprint2_cloud.pages.AddToFavoritesRenameCommentPage_Alex;
 import com.group5_sprint2_cloud.utilities.BrowserUtils;
 import com.group5_sprint2_cloud.utilities.Driver;
-import dev.failsafe.internal.util.DelegatingScheduler;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.bytebuddy.asm.Advice;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 import java.util.Random;
 
 public class FavoriteRenameCommentFunctionality_StepDef extends BasePage {
-    addToFavoritesRenameCommentPage_Alex addToFavoritesRenameCommentPageAlex
-            = new addToFavoritesRenameCommentPage_Alex();
+    AddToFavoritesRenameCommentPage_Alex AddToFavoritesRenameCommentPageAlex
+            = new AddToFavoritesRenameCommentPage_Alex();
     LoginPage loginPage = new LoginPage();
     Actions actions = new Actions(Driver.getDriver());
 
@@ -41,8 +36,8 @@ public class FavoriteRenameCommentFunctionality_StepDef extends BasePage {
     @And("user sellects random file and clicks on three dots menu")
     public void userSellectsRandomFileAndClicksOnThreeDotsMenu() {
         Random rand = new Random();
-        int randomIndex = rand.nextInt(addToFavoritesRenameCommentPageAlex.threeDotsMenu.size());
-        WebElement randomFile = addToFavoritesRenameCommentPageAlex.threeDotsMenu.get(randomIndex);
+        int randomIndex = rand.nextInt(AddToFavoritesRenameCommentPageAlex.threeDotsMenu.size());
+        WebElement randomFile = AddToFavoritesRenameCommentPageAlex.threeDotsMenu.get(randomIndex);
         BrowserUtils.sleep(3);
         randomFile.click();
 
@@ -53,11 +48,11 @@ public class FavoriteRenameCommentFunctionality_StepDef extends BasePage {
     public void userIsAddingFileToFavoritesAndVerifiesIt() {
         BrowserUtils.sleep(3);
         String actualText = "Remove from favorites";
-        if (!addToFavoritesRenameCommentPageAlex.addToFavotites.getText().equals(actualText)) {
-            addToFavoritesRenameCommentPageAlex.addToFavotites.click();
-            Assert.assertTrue(addToFavoritesRenameCommentPageAlex.isStarred.isDisplayed());
+        if (!AddToFavoritesRenameCommentPageAlex.addToFavotites.getText().equals(actualText)) {
+            AddToFavoritesRenameCommentPageAlex.addToFavotites.click();
+            Assert.assertTrue(AddToFavoritesRenameCommentPageAlex.isStarred.isDisplayed());
         }else {
-            Assert.assertTrue(addToFavoritesRenameCommentPageAlex.isStarred.isDisplayed());
+            Assert.assertTrue(AddToFavoritesRenameCommentPageAlex.isStarred.isDisplayed());
         }
 
         }
@@ -65,30 +60,25 @@ public class FavoriteRenameCommentFunctionality_StepDef extends BasePage {
         @And("user renames existing menues")
         public void userRenamesExistingMenues () {
         Random rand = new Random();
-            int randomIndex = rand.nextInt(addToFavoritesRenameCommentPageAlex.threeDotsMenu.size());
-            WebElement randomFile = addToFavoritesRenameCommentPageAlex.threeDotsMenu.get(randomIndex);
+            int randomIndex = rand.nextInt(AddToFavoritesRenameCommentPageAlex.threeDotsMenu.size());
+            WebElement randomFile = AddToFavoritesRenameCommentPageAlex.threeDotsMenu.get(randomIndex);
             BrowserUtils.sleep(3);
             randomFile.click();
 
         }
     @And("user click Rename")
     public void userClickRename() {
-        addToFavoritesRenameCommentPageAlex.rename.click();
-        addToFavoritesRenameCommentPageAlex.rename.clear();
-        addToFavoritesRenameCommentPageAlex.rename.sendKeys("new name" + Keys.ENTER);
-        Actions.moveToElement( element ).perform;
-                [8:12 PM]
-        Then actions.click(element).perform;
-
-
+        AddToFavoritesRenameCommentPageAlex.rename.click();
+        AddToFavoritesRenameCommentPageAlex.rename.clear();
+        AddToFavoritesRenameCommentPageAlex.rename.sendKeys("new name" + Keys.ENTER);
     }
 
 
     @And("user clicks Details then Commend")
     public void userClicksDetailsThenCommend() {
-        addToFavoritesRenameCommentPageAlex.details.click();
+        AddToFavoritesRenameCommentPageAlex.details.click();
         BrowserUtils.sleep(3);
-        addToFavoritesRenameCommentPageAlex.comments.click();
+        AddToFavoritesRenameCommentPageAlex.comments.click();
 
     }
 
@@ -96,10 +86,10 @@ public class FavoriteRenameCommentFunctionality_StepDef extends BasePage {
     public void userAddsHisCommentAndVerifiesItsDisplayed() {
         BrowserUtils.sleep(3);
         String newComment = "new comment to be aded";
-        addToFavoritesRenameCommentPageAlex.commentInput.sendKeys(newComment);
-        addToFavoritesRenameCommentPageAlex.commentSubmit.click();
+        AddToFavoritesRenameCommentPageAlex.commentInput.sendKeys(newComment);
+        AddToFavoritesRenameCommentPageAlex.commentSubmit.click();
         BrowserUtils.sleep(3);
-        Assert.assertTrue(addToFavoritesRenameCommentPageAlex.commentMessage.isDisplayed());
+        Assert.assertTrue(AddToFavoritesRenameCommentPageAlex.commentMessage.isDisplayed());
 
     }
 

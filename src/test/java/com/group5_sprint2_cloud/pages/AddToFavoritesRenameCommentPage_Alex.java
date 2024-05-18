@@ -5,8 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
-public class addToFavoritesRenameCommentPage_Alex {
-    public addToFavoritesRenameCommentPage_Alex(){
+public class AddToFavoritesRenameCommentPage_Alex {
+    public AddToFavoritesRenameCommentPage_Alex(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
