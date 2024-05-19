@@ -1,11 +1,14 @@
 package com.group5_sprint2_cloud.pages;
 
+
 import com.group5_sprint2_cloud.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class DashboardPage {
+
+    public class DashboardPage {
+
 
 
 
@@ -20,8 +23,13 @@ public class DashboardPage {
         public WebElement dashboard;
 
 
+
         @FindBy(xpath = "((//li/a[@aria-label='Files'])[1]")
         public WebElement filesBtn;
+
+        @FindBy (xpath = "(//a[@href='/index.php/apps/files/'])[1]")
+        public WebElement files;
+
 
         @FindBy (xpath = "(//a[@href='/index.php/apps/photos/'])[1]")
         public WebElement photos;
@@ -54,7 +62,8 @@ public class DashboardPage {
         @FindBy (xpath = "//div[@id='settings']")
         public WebElement userButton;
 
-        @FindBy (xpath = "//span[@class=\"user-status-menu-item__header\"]")
+
+        @FindBy (xpath = "//span[@class='user-status-menu-item__header']")
         public WebElement userName;
 
 
@@ -62,7 +71,8 @@ public class DashboardPage {
         public WebElement customizeButton;
 
 
-        @FindBy (id = "status-status")
+
+        @FindBy (xpath = "//button[@class= 'user-status-menu-item__toggle user-status-menu-item__toggle--inline']")
         public WebElement setStatusButton;
 
         @FindBy(xpath = "(//a[@aria-label='Talk'])[1]")

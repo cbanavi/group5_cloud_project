@@ -18,8 +18,9 @@ public class LoginStepDefs {
            This is for general login
 
 */
-        String username = null;
-        String password = null;
+
+            String username = null;
+            String password = null;
 
         if(userType.equalsIgnoreCase("User")){
             username = ConfigurationReader.getProperty("general_username");
@@ -41,4 +42,6 @@ public class LoginStepDefs {
 
     }
 
+
 }
+
