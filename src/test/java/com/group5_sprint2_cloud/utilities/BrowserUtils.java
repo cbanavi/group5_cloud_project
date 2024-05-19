@@ -475,7 +475,7 @@ public class BrowserUtils {
         }
     }
 
-    /**
+     /**
      *  checks that an element is present on the DOM of a page. This does not
      *    * necessarily mean that the element is visible.
      * @param by

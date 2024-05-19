@@ -34,6 +34,8 @@ public class Hooks {
         System.out.println("---> @Before: RUNNING BEFORE EACH SCENARIO");
     }
 
+
+
     /*
     @After will be executed automatically after EVERY scenario in the project.
      */

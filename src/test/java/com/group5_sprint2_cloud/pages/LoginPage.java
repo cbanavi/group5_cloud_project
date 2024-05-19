@@ -1,7 +1,6 @@
 package com.group5_sprint2_cloud.pages;
 
 
-
 import com.group5_sprint2_cloud.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,7 +12,9 @@ public class LoginPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+
     @FindBy(id = "user")
+
     public WebElement userName;
 
     @FindBy(id = "password")
@@ -21,18 +22,14 @@ public class LoginPage {
 
     @FindBy(id = "submit-form")
     public WebElement submit;
-//
-//    public void login(String username, String password) {
-//        userName.sendKeys(username);
-//        passwordInput.sendKeys(password);
-//        submit.click();
-//
-//
-//    }
 
+    public void login(String username, String password) {
+        userName.sendKeys(username);
+        passwordInput.sendKeys(password);
+        submit.click();
 
-     //If you're logging in with Employee username, it will come to this method and pull the "EMPLOYEE_USERNAME" from your system
-
+    }
+ /*
      public void loginNoProperties(String username, String password) {
      userName.sendKeys(username);
      passwordInput.sendKeys(password);
@@ -48,6 +45,7 @@ public class LoginPage {
      loginNoProperties(usernameEnv, passwordEnv);
 
      }
+
      //If you're logging in with Employee username, it will come to this method and pull the "EMPLOYEE_USERNAME" from your system
 
      public void employeeLoginWithEnv() {
@@ -57,5 +55,7 @@ public class LoginPage {
      loginNoProperties(usernameEnv, passwordEnv);
 
      }
+*/
 
+  
 }
