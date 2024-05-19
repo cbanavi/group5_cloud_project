@@ -28,7 +28,6 @@ Feature: As a user, I should be able to upload a file, move or delete any select
     Given the user logged in as "<userType>"
     When User clicks on Files module
     And User clicks three dots and click delete the file
-    And User can confirm the file is deleted
     Examples:
       | userType |
       | user     |

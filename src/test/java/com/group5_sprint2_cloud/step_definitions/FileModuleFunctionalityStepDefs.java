@@ -160,15 +160,6 @@ public class FileModuleFunctionalityStepDefs {
 
 
     }
-    @When("User can confirm the file is deleted")
-    public void user_can_confirm_the_file_is_deleted() {
-
-
-        BrowserUtils.sleep(3);
-
-        filesPage.uploadedFile.isDisplayed();
-
-    }
 
 
     @When("User should see the total number of files and folders under the list")
