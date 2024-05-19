@@ -3,6 +3,7 @@ package com.group5_sprint2_cloud.step_definitions;
 import com.group5_sprint2_cloud.pages.LoginPage;
 
 import com.group5_sprint2_cloud.utilities.ConfigurationReader;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 
 import org.slf4j.Logger;
@@ -44,5 +45,3 @@ public class LoginStepDefs {
 
 
 }
-
-
