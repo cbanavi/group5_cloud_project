@@ -38,9 +38,6 @@ import org.openqa.selenium.support.PageFactory;
     @FindBy (xpath = "(//a[@href='/index.php/apps/mail/'])[1]")
     public WebElement mail;
 
-    @FindBy (xpath = "(//a[@href='/index.php/apps/contacts/'])[1]")
-    public WebElement contact;
-
     @FindBy (xpath = "(//a[@href='/index.php/apps/circles/'])[1]")
     public WebElement circle;
 
