@@ -282,6 +282,7 @@ public class BrowserUtils {
      */
     public static void verifyElementNotDisplayed(By by) {
         try {
+
             Assert.assertFalse("Element should not be visible: " + by, Driver.getDriver().findElement(by).isDisplayed());
         } catch (NoSuchElementException e) {
             e.printStackTrace();
@@ -474,7 +475,7 @@ public class BrowserUtils {
         }
     }
 
-    /**
+     /**
      *  checks that an element is present on the DOM of a page. This does not
      *    * necessarily mean that the element is visible.
      * @param by
@@ -483,6 +484,7 @@ public class BrowserUtils {
     public static void waitForPresenceOfElement(By by, long time) {
         new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(time)).until(ExpectedConditions.presenceOfElementLocated(by));
     }
+
 
 
 }

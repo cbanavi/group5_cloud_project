@@ -105,15 +105,15 @@ public class US005_StepDef extends BasePage {
         Assert.assertTrue(actualURL.contains(expectedURL));
     }
 
-    @Given("the user is logged in as {string}")
-    public void theUserIsLoggedInAs(String userType) {
-        if (userType.equalsIgnoreCase("User")) {
-            new LoginPage().userLoginWithEnv();
-        } else if (userType.equalsIgnoreCase("Employee")) {
-            new LoginPage().employeeLoginWithEnv();
-        }
-
-    }
+//    @Given("the user is logged in as {string}")
+//    public void theUserIsLoggedInAs(String userType) {
+//        if (userType.equalsIgnoreCase("User")) {
+//            new LoginPage().userLoginWithEnv();
+//        } else if (userType.equalsIgnoreCase("Employee")) {
+//            new LoginPage().employeeLoginWithEnv();
+//        }
+//
+//    }
 
     @When("the user is on the Calendar page")
     public void theUserIsOnTheCalendarPage() {
